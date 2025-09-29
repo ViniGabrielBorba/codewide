@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WideCodeBR — Contato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <div>
+          <div class="title">WIDECODEBR</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:-4px">DEVELOPMENT</div>
+        </div>
+      </div>
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="serviços.html">Serviços</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="sobre.html">Sobre a WideCodeBR</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-controls="navMobile" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    </header>
+
+    <div id="overlay" class="overlay" tabindex="-1" aria-hidden="true"></div>
+
+    <nav class="nav-mobile" id="navMobile" aria-hidden="true">
+      <button class="nav-close" id="navClose" aria-label="Fechar menu">✕</button>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="serviços.html" class="nav-link">Serviços</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="sobre.html" class="nav-link">Sobre a WideCodeBR</a>
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+
+   <section class="contact-section">
+  <div class="contact-left">
+    <h1>Entre em Contato</h1>
+    <p>Quer saber mais ou solicitar um orçamento? Preencha o formulário ou nos envie uma mensagem diretamente pelo WhatsApp.</p>
+    
+    <div class="contact-info">
+      <p><strong>Email:</strong> contato@widecodebr.com</p>
+      <p><strong>Telefone:</strong> +55 81 99420-1799</p>
+      <p><strong>Localização:</strong> Recife, PE, Brasil</p>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <form class="contact-form">
+      <input type="text" name="nome" placeholder="Seu Nome" required>
+      <input type="email" name="email" placeholder="Seu Email" required>
+      <textarea name="mensagem" placeholder="Sua Mensagem" rows="6" required></textarea>
+      <button type="submit" class="cta">Enviar Mensagem</button>
+    </form>
+  </div>
+</section>
+
+
+  </div>
+
+  <script src="menu.js"></script>
+</body>
+</html>

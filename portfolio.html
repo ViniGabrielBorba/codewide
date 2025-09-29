@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WideCodeBR — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <div>
+          <div class="title">WIDECODEBR</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:-4px">DEVELOPMENT</div>
+        </div>
+      </div>
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="serviços.html">Serviços</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="sobre.html">Sobre a WideCodeBR</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-controls="navMobile" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    </header>
+
+    <div id="overlay" class="overlay" tabindex="-1" aria-hidden="true"></div>
+
+    <nav class="nav-mobile" id="navMobile" aria-hidden="true">
+      <button class="nav-close" id="navClose" aria-label="Fechar menu">✕</button>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="serviços.html" class="nav-link">Serviços</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="sobre.html" class="nav-link">Sobre a WideCodeBR</a>
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+
+    <!-- Portfolio -->
+<section class="portfolio-section" id="port">
+  <h2 class="section-title">Portfolio</h2>
+  <p class="section-subtitle">Confira os tipos de projetos que entregamos. Em breve adicionaremos nossos cases reais.</p>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <img src="xg-site-institucional-sucesso.jpg" alt="Site Corporativo">
+      <div class="portfolio-overlay">
+        <h3>Site Corporativo</h3>
+        <p>Design moderno, responsivo e otimizado para performance.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="qutela.jpg" alt="Landing Page">
+      <div class="portfolio-overlay">
+        <h3>Landing Page</h3>
+        <p>Páginas de conversão para leads e vendas.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="sistema.png" alt="Sistema Web">
+      <div class="portfolio-overlay">
+        <h3>Sistema Web</h3>
+        <p>Soluções personalizadas para automatizar processos.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="jctela.jpg" alt="Consultoria Tech">
+      <div class="portfolio-overlay">
+        <h3>Consultoria Tech</h3>
+        <p>Orientação estratégica para melhorar sua presença digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
