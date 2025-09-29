@@ -665,3 +665,125 @@ nav.nav-desktop a:focus {
     max-width: 100%;
   }
 }
+
+/* Estilo do modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  /* ============================
+   PORTFÓLIO
+============================ */
+.portfolio-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.portfolio-section .section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.portfolio-section .section-subtitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 40px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.portfolio-overlay p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ============================
+   MOBILE
+============================ */
+@media (max-width: 768px) {
+  .portfolio-overlay {
+    opacity: 1; /* sempre visível no mobile */
+    background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 50%);
+  }
+
+  .portfolio-card img {
+    transform: none; /* desliga o zoom */
+  }
+}
