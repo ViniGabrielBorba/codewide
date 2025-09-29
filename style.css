@@ -787,3 +787,16 @@ nav.nav-desktop a:focus {
     transform: none; /* desliga o zoom */
   }
 }
+   /* Overlay sempre visível no mobile */
+@media (max-width: 768px) {
+  .portfolio-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 50%);
+  }
+
+  .portfolio-card img {
+    transform: none; /* desliga o zoom */
+  }
+}
+
+
