@@ -619,4 +619,31 @@ nav.nav-desktop a:focus {
   }
 }
 
+/* Links do rodapé */
+footer a {
+  color: var(--primary); /* Cor principal do site */
+  text-decoration: none; /* Remove sublinhado padrão */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #FFB86B; /* Tom de destaque ao passar o mouse */
+  text-decoration: underline;
+}
+
+/* Link do aviso de cookies */
+#cookieConsent a {
+  color: #FFB86B; /* Destaca no fundo roxo */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#cookieConsent a:hover {
+  color: #fff; /* Muda ao passar o mouse */
+  text-decoration: underline;
+}
+
+
 
