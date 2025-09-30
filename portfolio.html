@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WideCodeBR — Sobre</title>
+  <title>WideCodeBR — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -38,33 +38,52 @@
       <a href="contato.html" class="nav-link">Contato</a>
     </nav>
 
-    <section class="about-section">
-      <div class="about-left">
-        <h1>Sobre a WideCodeBR</h1>
-        <p>Transformamos ideias em soluções digitais modernas e eficientes. Nosso foco é design, performance e impacto.</p>
-        
-        <div class="about-cards">
-          <div class="about-card">
-            <h3>Missão</h3>
-            <p>Entregar sites e sistemas que ajudam marcas a se destacarem online.</p>
-          </div>
-          <div class="about-card">
-            <h3>Visão</h3>
-            <p>Ser referência em soluções digitais criativas e escaláveis.</p>
-          </div>
-          <div class="about-card">
-            <h3>Valores</h3>
-            <p>Qualidade, inovação e proximidade com nossos clientes.</p>
+    <!-- Portfolio -->
+    <section class="portfolio-section" id="port">
+      <h2 class="section-title">Portfolio</h2>
+      <p class="section-subtitle">Confira os tipos de projetos que entregamos. Em breve adicionaremos nossos cases reais.</p>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="xg-site-institucional-sucesso.jpg" alt="Site Corporativo">
+          <div class="portfolio-info">
+            <h3>Site Corporativo</h3>
+            <p>Design moderno, responsivo e otimizado para performance.</p>
           </div>
         </div>
 
-        <a class="cta" href="contato.html">Entre em Contato</a>
-      </div>
+        <div class="portfolio-card">
+          <img src="qutela.jpg" alt="Landing Page">
+          <div class="portfolio-info">
+            <h3>Landing Page</h3>
+            <p>Páginas de conversão para leads e vendas.</p>
+          </div>
+        </div>
 
-      <div class="about-right">
-        <img src="sobree.webp" alt="WideCodeBR equipe ou projeto">
+        <div class="portfolio-card">
+          <img src="sistema.png" alt="Sistema Web">
+          <div class="portfolio-info">
+            <h3>Sistema Web</h3>
+            <p>Soluções personalizadas para automatizar processos.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="jctela.jpg" alt="Consultoria Tech">
+          <div class="portfolio-info">
+            <h3>Consultoria Tech</h3>
+            <p>Orientação estratégica para melhorar sua presença digital.</p>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div id="portfolioModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+      <div id="caption"></div>
+    </div>
 
     <!-- RODAPÉ COM LINKS LEGAIS -->
     <footer style="
@@ -87,3 +106,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
