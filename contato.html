@@ -63,39 +63,51 @@
       </div>
     </section>
 
-    <!-- POLÍTICA DE COOKIES -->
-    <div id="cookieConsent" style="position:fixed;bottom:10px;width:100%;background:#222;color:#fff;padding:15px;text-align:center;z-index:9999;">
-      Usamos cookies para melhorar sua experiência. 
-      <button onclick="acceptCookies()" style="margin-left:10px;padding:5px 10px;">Aceitar</button>
-      <a href="politica-privacidade.html" style="color:#FFD700;margin-left:10px;">Política de Privacidade</a>
-    </div>
+    <!-- RODAPÉ COM LINKS LEGAIS -->
+    <footer style="
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px 0;
+      background: #A43BCB;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    ">
+      <p style="margin: 0 0 8px 0; font-size: 16px;">
+        <a href="politica-privacidade.html" style="color:#FFB86B; text-decoration:none; margin: 0 12px;">Política de Privacidade</a> |
+        <a href="termos-uso.html" style="color:#FFB86B; text-decoration:none; margin: 0 12px;">Termos de Uso</a>
+      </p>
+      <p style="margin:0; font-size:14px;">&copy; 2025 WideCodeBR. Todos os direitos reservados.</p>
+    </footer>
 
   </div>
 
   <script>
     // COOKIE CONSENT
-    function acceptCookies(){
-      document.getElementById('cookieConsent').style.display='none';
-      localStorage.setItem('cookiesAccepted','true');
+    const cookieDiv = document.getElementById('cookieConsent');
+    if (!localStorage.getItem('cookiesAccepted')) {
+      cookieDiv.style.display = 'block';
+    } else {
+      cookieDiv.style.display = 'none';
     }
-    if(localStorage.getItem('cookiesAccepted')) {
-      document.getElementById('cookieConsent').style.display='none';
+    function acceptCookies(){
+      cookieDiv.style.display='none';
+      localStorage.setItem('cookiesAccepted','true');
     }
 
     // FORMULÁRIO WHATSAPP
     const form = document.getElementById('whatsappForm');
     form.addEventListener('submit', function(e){
-      e.preventDefault(); // previne envio normal
+      e.preventDefault();
       const nome = form.nome.value;
       const email = form.email.value;
       const mensagem = form.mensagem.value;
-      const phone = "5581994201799"; // seu WhatsApp
+      const phone = "5581994201799";
       const text = `Olá, meu nome é ${nome}.\nEmail: ${email}\nMensagem: ${mensagem}`;
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       window.open(url, "_blank");
       form.reset();
     });
   </script>
-
 </body>
 </html>
+
