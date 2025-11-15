@@ -1704,6 +1704,21 @@ img[loading="lazy"] {
   .about-section,
   .contact-section {
     margin-top: var(--space-2xl);
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .map-container iframe {
+    height: 200px;
   }
   
   .portfolio-grid {
