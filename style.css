@@ -232,6 +232,36 @@ nav.nav-desktop a.active::after {
   padding-top: var(--space-md);
 }
 
+.hero-right {
+  position: relative;
+}
+
+.hero-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, rgba(0,217,255,0.2) 50%, transparent 70%);
+  border-radius: 20px;
+  z-index: 0;
+  animation: pulse-glow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
 .hero-right img {
   max-width: 100%;
   width: 100%;
@@ -239,17 +269,35 @@ nav.nav-desktop a.active::after {
   min-width: 250px;
   border-radius: 16px;
   object-fit: contain;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  z-index: 1;
+  border: 3px solid transparent;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)) padding-box,
+              linear-gradient(135deg, rgba(255,215,0,0.6), rgba(0,217,255,0.6), rgba(255,215,0,0.6)) border-box;
+  box-shadow: 0 20px 60px rgba(255,215,0,0.3),
+              0 0 80px rgba(0,217,255,0.2),
+              0 10px 40px rgba(0,0,0,0.5),
+              inset 0 0 30px rgba(255,215,0,0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   opacity: 1;
+  filter: brightness(1.05) contrast(1.05);
 }
 
 .hero-right img:hover, 
 .hero-right img:focus { 
-  transform: translateY(-5px) scale(1.02); 
-  box-shadow: 0 30px 60px rgba(0,0,0,0.4); 
+  transform: translateY(-8px) scale(1.03); 
+  box-shadow: 0 30px 80px rgba(255,215,0,0.5),
+              0 0 120px rgba(0,217,255,0.4),
+              0 15px 60px rgba(0,0,0,0.6),
+              inset 0 0 50px rgba(255,215,0,0.2);
+  border-color: rgba(255,215,0,0.8);
+  filter: brightness(1.1) contrast(1.1);
   outline: none; 
+}
+
+.hero-right img:active {
+  transform: translateY(-5px) scale(1.01);
 }
 
 /* ============================
