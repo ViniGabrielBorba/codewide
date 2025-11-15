@@ -1604,6 +1604,9 @@ img[loading="lazy"] {
     order: 3;
     margin-bottom: var(--space-xl);
     width: auto;
+    align-self: center !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-right {
@@ -1769,6 +1772,9 @@ img[loading="lazy"] {
     order: 3;
     margin-bottom: var(--space-lg);
     width: auto;
+    align-self: center !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-right {
@@ -1976,6 +1982,9 @@ img[loading="lazy"] {
     order: 3;
     margin-bottom: var(--space-lg);
     width: auto;
+    align-self: center !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-right {
