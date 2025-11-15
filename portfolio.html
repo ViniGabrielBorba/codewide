@@ -3,18 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WideCodeBR — Portfolio</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Portfólio WideCodeBR — Confira nossos projetos: sites corporativos, landing pages, sistemas web e soluções digitais personalizadas. Cases de sucesso em desenvolvimento web.">
+  <meta name="keywords" content="portfólio WideCodeBR, projetos web, sites desenvolvidos, cases de sucesso, exemplos de sites, desenvolvimento web portfolio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vinigabrielborba.github.io/codewide/portfolio.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vinigabrielborba.github.io/codewide/portfolio.html">
+  <meta property="og:title" content="Portfólio — WideCodeBR | Projetos Web">
+  <meta property="og:description" content="Confira nossos projetos: sites corporativos, landing pages e sistemas web personalizados.">
+  <meta property="og:image" content="https://vinigabrielborba.github.io/codewide/widecodebr%20(4).png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfólio — WideCodeBR">
+  <meta name="twitter:description" content="Confira nossos projetos de desenvolvimento web.">
+  
+  <title>Portfólio — WideCodeBR | Projetos Web</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
   <div class="wrap">
 
     <header>
       <div class="brand">
         <div>
           <div class="title">WIDECODEBR</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:-4px">DEVELOPMENT</div>
+          <div class="brand-subtitle">DEVELOPMENT</div>
         </div>
       </div>
       <nav class="nav-desktop">
@@ -39,13 +59,13 @@
     </nav>
 
     <!-- Portfolio -->
-    <section class="portfolio-section" id="port">
+    <section class="portfolio-section" id="main-content">
       <h2 class="section-title">Portfolio</h2>
       <p class="section-subtitle">Confira os tipos de projetos que entregamos. Em breve adicionaremos nossos cases reais.</p>
 
       <div class="portfolio-grid">
         <div class="portfolio-card">
-          <img src="xg-site-institucional-sucesso.jpg" alt="Site Corporativo">
+          <img src="xg-site-institucional-sucesso.jpg" alt="Site Corporativo - Design moderno e responsivo" loading="lazy">
           <div class="portfolio-info">
             <h3>Site Corporativo</h3>
             <p>Design moderno, responsivo e otimizado para performance.</p>
@@ -53,7 +73,7 @@
         </div>
 
         <div class="portfolio-card">
-          <img src="qutela.jpg" alt="Landing Page">
+          <img src="qutela.jpg" alt="Landing Page - Página de conversão otimizada" loading="lazy">
           <div class="portfolio-info">
             <h3>Landing Page</h3>
             <p>Páginas de conversão para leads e vendas.</p>
@@ -61,7 +81,7 @@
         </div>
 
         <div class="portfolio-card">
-          <img src="sistema.png" alt="Sistema Web">
+          <img src="sistema.png" alt="Sistema Web - Solução personalizada para automação" loading="lazy">
           <div class="portfolio-info">
             <h3>Sistema Web</h3>
             <p>Soluções personalizadas para automatizar processos.</p>
@@ -69,7 +89,7 @@
         </div>
 
         <div class="portfolio-card">
-          <img src="jctela.jpg" alt="Consultoria Tech">
+          <img src="jctela.jpg" alt="Consultoria Tech - Orientação estratégica em tecnologia" loading="lazy">
           <div class="portfolio-info">
             <h3>Consultoria Tech</h3>
             <p>Orientação estratégica para melhorar sua presença digital.</p>
@@ -85,22 +105,21 @@
       <div id="caption"></div>
     </div>
 
-    <!-- RODAPÉ COM LINKS LEGAIS -->
-    <footer style="
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px 0;
-      background: #A43BCB;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-    ">
-      <p style="margin: 0 0 8px 0; font-size: 16px;">
-        <a href="politica.html" style="color:#FFB86B; text-decoration:none; margin: 0 12px;">Política de Privacidade</a> |
-        <a href="termo_de_uso.html" style="color:#FFB86B; text-decoration:none; margin: 0 12px;">Termos de Uso</a>
+    <!-- RODAPÉ -->
+    <footer>
+      <p>
+        <a href="politica.html">Política de Privacidade</a> |
+        <a href="termo_de_uso.html">Termos de Uso</a>
       </p>
-      <p style="margin:0; font-size:14px;">&copy; 2025 WideCodeBR. Todos os direitos reservados.</p>
+      <p>&copy; 2025 WideCodeBR. Todos os direitos reservados.</p>
     </footer>
 
+  </div>
+
+  <div id="cookieConsent">
+    Usamos cookies para melhorar sua experiência. 
+    <a href="politica.html">Saiba mais</a>
+    <button id="acceptCookiesBtn">Aceitar</button>
   </div>
 
   <script src="script.js"></script>

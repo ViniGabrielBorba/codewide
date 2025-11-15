@@ -3,28 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <meta name="description" content="Política de Privacidade da WideCodeBR — Saiba como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vinigabrielborba.github.io/codewide/politica.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vinigabrielborba.github.io/codewide/politica.html">
+  <meta property="og:title" content="Política de Privacidade — WideCodeBR">
+  <meta property="og:description" content="Política de privacidade e proteção de dados da WideCodeBR.">
+  
   <title>Política de Privacidade — WideCodeBR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
   <div class="wrap">
     <header>
       <div class="brand">
         <div>
           <div class="title">WIDECODEBR</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:-4px">DEVELOPMENT</div>
+          <div class="brand-subtitle">DEVELOPMENT</div>
         </div>
       </div>
       <nav class="nav-desktop">
         <a href="index.html">Home</a>
         <a href="serviços.html">Serviços</a>
         <a href="portfolio.html">Portfolio</a>
-        <a href="sobre.html">Sobre</a>
+        <a href="sobre.html">Sobre a WideCodeBR</a>
         <a href="contato.html">Contato</a>
       </nav>
+      <button class="menu-btn" id="menuBtn" aria-controls="navMobile" aria-expanded="false" aria-label="Abrir menu">☰</button>
     </header>
 
-    <main>
+    <div id="overlay" class="overlay" tabindex="-1" aria-hidden="true"></div>
+
+    <nav class="nav-mobile" id="navMobile" aria-hidden="true">
+      <button class="nav-close" id="navClose" aria-label="Fechar menu">✕</button>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="serviços.html" class="nav-link">Serviços</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="sobre.html" class="nav-link">Sobre a WideCodeBR</a>
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+
+    <main id="main-content">
       <h1>Política de Privacidade</h1>
       <p>Na WideCodeBR, respeitamos a sua privacidade e estamos comprometidos em proteger seus dados.</p>
 
@@ -49,6 +75,22 @@
 
       <p>Última atualização: Setembro 2025</p>
     </main>
+
+    <footer>
+      <p>
+        <a href="politica.html">Política de Privacidade</a> |
+        <a href="termo_de_uso.html">Termos de Uso</a>
+      </p>
+      <p>&copy; 2025 WideCodeBR. Todos os direitos reservados.</p>
+    </footer>
   </div>
+
+  <div id="cookieConsent">
+    Usamos cookies para melhorar sua experiência. 
+    <a href="politica.html">Saiba mais</a>
+    <button id="acceptCookiesBtn">Aceitar</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

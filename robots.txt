@@ -1,0 +1,23 @@
+# robots.txt para WideCodeBR
+# https://vinigabrielborba.github.io/codewide/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vinigabrielborba.github.io/codewide/sitemap.xml
+
+# Bloquear arquivos desnecessários para indexação
+Disallow: /CNAME
+Disallow: /*.png$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.webp$
+Disallow: /*.gif$
+
+# Permitir imagens importantes (caso necessário)
+Allow: /widecodebr*.png
+
+# Crawl-delay (opcional - remover se não necessário)
+# Crawl-delay: 1
+

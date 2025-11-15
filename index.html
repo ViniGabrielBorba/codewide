@@ -5,18 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Básico -->
-  <meta name="description" content="WideCodeBR — Transformamos suas ideias em sites modernos e responsivos. Veja nosso portfólio, serviços e entre em contato.">
-  <meta name="keywords" content="web design, desenvolvimento de sites, landing pages, sistemas web, WideCodeBR">
+  <meta name="description" content="WideCodeBR — Transformamos suas ideias em sites modernos e responsivos. Desenvolvimento web, landing pages e sistemas personalizados. Veja nosso portfólio e solicite um orçamento.">
+  <meta name="keywords" content="web design, desenvolvimento de sites, landing pages, sistemas web, criação de sites, desenvolvimento web Brasil, WideCodeBR, sites responsivos, design moderno">
   <meta name="author" content="WideCodeBR">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Portuguese">
+  <meta name="geo.region" content="BR-PE">
+  <meta name="geo.placename" content="Recife">
   
-  <!-- OG Tags -->
-  <meta property="og:title" content="WideCodeBR — Web Development">
-  <meta property="og:description" content="Transformamos suas ideias em sites modernos e responsivos. Confira nossos serviços e portfólio.">
-  <meta property="og:image" content="widecodebr (4).png">
-  <meta property="og:url" content="https://vinigabrielborba.github.io/codewide/">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://vinigabrielborba.github.io/codewide/">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vinigabrielborba.github.io/codewide/">
+  <meta property="og:title" content="WideCodeBR — Desenvolvimento Web Moderno e Responsivo">
+  <meta property="og:description" content="Transformamos suas ideias em sites modernos e responsivos. Desenvolvimento web, landing pages e sistemas personalizados. Confira nossos serviços e portfólio.">
+  <meta property="og:image" content="https://vinigabrielborba.github.io/codewide/widecodebr%20(4).png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="WideCodeBR">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vinigabrielborba.github.io/codewide/">
+  <meta name="twitter:title" content="WideCodeBR — Desenvolvimento Web Moderno e Responsivo">
+  <meta name="twitter:description" content="Transformamos suas ideias em sites modernos e responsivos. Desenvolvimento web, landing pages e sistemas personalizados.">
+  <meta name="twitter:image" content="https://vinigabrielborba.github.io/codewide/widecodebr%20(4).png">
 
-  <title>WideCodeBR</title>
+  <title>WideCodeBR — Desenvolvimento Web Moderno e Responsivo</title>
 
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,8 +44,63 @@
 
   <!-- CSS Externo -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "WideCodeBR",
+    "description": "Desenvolvimento web moderno e responsivo. Criação de sites, landing pages e sistemas personalizados.",
+    "url": "https://vinigabrielborba.github.io/codewide/",
+    "logo": "https://vinigabrielborba.github.io/codewide/widecodebr%20(4).png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-81-99420-1799",
+      "contactType": "Customer Service",
+      "email": "vinigabrielborba@gmail.com",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Recife",
+      "addressRegion": "PE",
+      "addressCountry": "BR"
+    },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "WideCodeBR",
+    "url": "https://vinigabrielborba.github.io/codewide/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://vinigabrielborba.github.io/codewide/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "WideCodeBR",
+    "description": "Desenvolvimento de sites, landing pages e sistemas web personalizados",
+    "provider": {
+      "@type": "Organization",
+      "name": "WideCodeBR"
+    },
+    "areaServed": "BR",
+    "serviceType": ["Web Development", "Web Design", "Landing Pages", "Web Systems"]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
   <div class="wrap" role="main" aria-labelledby="site-title">
 
     <!-- HEADER -->
@@ -35,7 +108,7 @@
       <div class="brand">
         <div>
           <div class="title">WIDECODEBR</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:-4px">DEVELOPMENT</div>
+          <div class="brand-subtitle">DEVELOPMENT</div>
         </div>
       </div>
 
@@ -67,6 +140,7 @@
 
     <!-- HERO -->
     <section class="hero" id="home">
+      <main id="main-content" role="main">
       <div class="hero-left">
         <h1 id="site-title">Design, velocidade e impacto. O site que sua marca precisa</h1>
         <p>Desenvolvemos sites, landing pages e sistemas sob medida para transformar sua ideia em produto digital escalável.</p>
@@ -111,102 +185,30 @@
 
       <!-- COLUNA DIREITA COM IMAGEM -->
       <div class="hero-right">
-        <img src="widecodebr (4).png" alt="Exemplo de projeto WideCodeBR">
+        <img src="widecodebr (4).png" alt="Logo WideCodeBR - Desenvolvimento web moderno" loading="lazy">
       </div>
+      </main>
     </section>
 
     <!-- RODAPÉ -->
     <footer>
       <p>
-        &copy; 2025 WideCodeBR. Todos os direitos reservados. |
         <a href="politica.html">Política de Privacidade</a> |
         <a href="termo_de_uso.html">Termos de Uso</a>
       </p>
+      <p>&copy; 2025 WideCodeBR. Todos os direitos reservados.</p>
     </footer>
 
   </div>
 
-  <!-- Script do menu mobile -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navMobile = document.getElementById('navMobile');
-    const overlay = document.getElementById('overlay');
-    const navClose = document.getElementById('navClose');
-
-    menuBtn.addEventListener('click', () => {
-      navMobile.classList.add('active');
-      overlay.classList.add('active');
-      navMobile.setAttribute('aria-hidden', 'false');
-    });
-
-    navClose.addEventListener('click', () => {
-      navMobile.classList.remove('active');
-      overlay.classList.remove('active');
-      navMobile.setAttribute('aria-hidden', 'true');
-    });
-
-    overlay.addEventListener('click', () => {
-      navMobile.classList.remove('active');
-      overlay.classList.remove('active');
-      navMobile.setAttribute('aria-hidden', 'true');
-    });
-  </script>
-
-  <!-- Aviso de Cookies com link para política -->
-  <div id="cookieConsent" style="
-    position: fixed;
-    bottom: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 500px;
-    background: rgba(164, 59, 203, 0.95);
-    color: #fff;
-    padding: 16px 24px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    z-index: 9999;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 0;
-  ">
+  <!-- Aviso de Cookies -->
+  <div id="cookieConsent">
     Usamos cookies para melhorar sua experiência. 
-    <a href="privacidade.html" style="color:#FFB86B;text-decoration:underline;">Saiba mais</a>
-    <button id="acceptCookiesBtn" style="
-      margin-left: 12px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      background: #FFB86B;
-      color: #222;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    ">Aceitar</button>
+    <a href="politica.html">Saiba mais</a>
+    <button id="acceptCookiesBtn">Aceitar</button>
   </div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const consent = document.getElementById('cookieConsent');
-      const btn = document.getElementById('acceptCookiesBtn');
-
-      if (!localStorage.getItem('cookiesAccepted')) {
-        setTimeout(() => {
-          consent.style.bottom = '20px';
-          consent.style.opacity = '1';
-        }, 500);
-      } else {
-        consent.style.display = 'none';
-      }
-
-      btn.addEventListener('click', () => {
-        consent.style.bottom = '-120px';
-        consent.style.opacity = '0';
-        localStorage.setItem('cookiesAccepted', 'true');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>

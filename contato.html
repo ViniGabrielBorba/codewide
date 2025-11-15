@@ -3,11 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WideCodeBR — Contato</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Entre em contato com a WideCodeBR — Solicite um orçamento para desenvolvimento web. Email, telefone e WhatsApp. Atendemos em Recife, PE.">
+  <meta name="keywords" content="contato WideCodeBR, orçamento desenvolvimento web, WhatsApp, email, telefone, Recife PE">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vinigabrielborba.github.io/codewide/contato.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vinigabrielborba.github.io/codewide/contato.html">
+  <meta property="og:title" content="Contato — WideCodeBR | Solicite seu Orçamento">
+  <meta property="og:description" content="Solicite um orçamento para desenvolvimento web. Entre em contato via WhatsApp, email ou telefone.">
+  <meta property="og:image" content="https://vinigabrielborba.github.io/codewide/widecodebr%20(4).png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contato — WideCodeBR">
+  <meta name="twitter:description" content="Solicite seu orçamento de desenvolvimento web.">
+  
+  <title>Contato — WideCodeBR | Solicite seu Orçamento</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Structured Data for Contact Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contato WideCodeBR",
+    "description": "Entre em contato para solicitar um orçamento",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "WideCodeBR",
+      "email": "vinigabrielborba@gmail.com",
+      "telephone": "+55-81-99420-1799",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Recife",
+        "addressRegion": "PE",
+        "addressCountry": "BR"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
   <div class="wrap">
 
     <!-- HEADER -->
@@ -15,7 +57,7 @@
       <div class="brand">
         <div>
           <div class="title">WIDECODEBR</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:-4px">DEVELOPMENT</div>
+          <div class="brand-subtitle">DEVELOPMENT</div>
         </div>
       </div>
       <nav class="nav-desktop">
@@ -42,7 +84,7 @@
     </nav>
 
     <!-- SEÇÃO DE CONTATO -->
-    <section class="contact-section">
+    <section class="contact-section" id="main-content">
       <div class="contact-left">
         <h1>Entre em Contato</h1>
         <p>Quer saber mais ou solicitar um orçamento? Preencha o formulário ou nos envie uma mensagem diretamente pelo WhatsApp.</p>
@@ -64,69 +106,24 @@
     </section>
 
     <!-- RODAPÉ -->
-    <footer style="text-align:center; margin-top:50px; padding:20px 0; background:#A43BCB; color:#fff; font-family: 'Poppins', sans-serif;">
-      <p style="margin: 0 0 8px 0; font-size: 16px;">
-        <a href="politica.html" style="color:#FFB86B; text-decoration:none; margin: 0 12px;">Política de Privacidade</a> |
-        <a href="termo_de_uso.html" style="color:#FFB86B; text-decoration:none; margin: 0 12px;">Termos de Uso</a>
+    <footer>
+      <p>
+        <a href="politica.html">Política de Privacidade</a> |
+        <a href="termo_de_uso.html">Termos de Uso</a>
       </p>
-      <p style="margin:0; font-size:14px;">&copy; 2025 WideCodeBR. Todos os direitos reservados.</p>
+      <p>&copy; 2025 WideCodeBR. Todos os direitos reservados.</p>
     </footer>
 
     <!-- COOKIE CONSENT -->
-    <div id="cookieConsent" style="display:none; position:fixed; bottom:10px; width:100%; background:#222; color:#fff; padding:15px; text-align:center; z-index:9999;">
-      Usamos cookies para melhorar sua experiência.
-      <button onclick="acceptCookies()" style="margin-left:10px;padding:5px 10px;">Aceitar</button>
-      <a href="politica.html" style="color:#FFD700; margin-left:10px;">Política de Privacidade</a>
+    <div id="cookieConsent">
+      Usamos cookies para melhorar sua experiência. 
+      <a href="politica.html">Saiba mais</a>
+      <button id="acceptCookiesBtn">Aceitar</button>
     </div>
 
   </div>
 
-  <script>
-    // MENU MOBILE
-    const menuBtn = document.getElementById('menuBtn');
-    const navMobile = document.getElementById('navMobile');
-    const navClose = document.getElementById('navClose');
-    const overlay = document.getElementById('overlay');
-
-    menuBtn.addEventListener('click', () => {
-      navMobile.classList.add('active');
-      overlay.classList.add('active');
-    });
-
-    navClose.addEventListener('click', () => {
-      navMobile.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-
-    overlay.addEventListener('click', () => {
-      navMobile.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-
-    // COOKIE CONSENT
-    const cookieDiv = document.getElementById('cookieConsent');
-    if (!localStorage.getItem('cookiesAccepted')) {
-      cookieDiv.style.display = 'block';
-    }
-    function acceptCookies(){
-      cookieDiv.style.display='none';
-      localStorage.setItem('cookiesAccepted','true');
-    }
-
-    // FORMULÁRIO WHATSAPP
-    const form = document.getElementById('whatsappForm');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const nome = form.nome.value;
-      const email = form.email.value;
-      const mensagem = form.mensagem.value;
-      const phone = "5581994201799"; // seu número WhatsApp
-      const text = `Olá, meu nome é ${nome}.\nEmail: ${email}\nMensagem: ${mensagem}`;
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank");
-      form.reset();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
 
