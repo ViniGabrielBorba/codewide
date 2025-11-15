@@ -283,8 +283,10 @@ nav.nav-desktop a.active::after {
 
 .services { 
   display: grid; 
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg); 
+  width: 100%;
+  max-width: 100%;
 }
 
 .service {
@@ -1732,9 +1734,17 @@ img[loading="lazy"] {
   }
 
   .services {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
     margin-top: var(--space-lg);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .services {
+      grid-template-columns: 1fr;
+    }
   }
 
   .services-sidebar {
