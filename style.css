@@ -903,7 +903,8 @@ img[loading="lazy"] {
     font-size: var(--font-size-lg);
   }
   
-  .hero {
+  .hero-main {
+    grid-template-columns: 1fr !important;
     margin-top: var(--space-lg);
     gap: var(--space-lg);
   }
