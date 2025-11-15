@@ -158,6 +158,13 @@ nav.nav-desktop a.active::after {
   margin-top: var(--space-2xl);
 }
 
+/* Garantir layout lado a lado em desktop */
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr minmax(300px, 1fr) !important;
+  }
+}
+
 .hero-left { 
   display: flex; 
   flex-direction: column; 
