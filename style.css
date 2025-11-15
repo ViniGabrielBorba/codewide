@@ -180,16 +180,32 @@ nav.nav-desktop a.active::after {
   line-height: 1.6;
 }
 
-.hero-right { display: flex; align-items: center; justify-content: center; }
+.hero-right { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  min-height: 300px;
+}
+
 .hero-right img {
-  max-width: 90%;
+  max-width: 100%;
+  width: 100%;
   height: auto;
+  min-width: 250px;
   border-radius: 16px;
   object-fit: contain;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   transition: transform var(--transition), box-shadow var(--transition);
+  display: block;
+  opacity: 1;
 }
-.hero-right img:hover, .hero-right img:focus { transform: translateY(-5px) scale(1.02); box-shadow: 0 30px 60px rgba(0,0,0,0.4); outline: none; }
+
+.hero-right img:hover, 
+.hero-right img:focus { 
+  transform: translateY(-5px) scale(1.02); 
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4); 
+  outline: none; 
+}
 
 /* ============================
    BOTÃO CTA
@@ -291,6 +307,7 @@ nav.nav-desktop a.active::after {
   height: 200px; 
   object-fit: cover; 
   display: block;
+  opacity: 1;
 }
 
 .portfolio-info { 
@@ -367,9 +384,28 @@ nav.nav-desktop a.active::after {
   color: rgba(255,255,255,0.8);
   line-height: 1.5;
 }
-.about-right { display:flex; align-items:center; justify-content:center; }
-.about-right img { max-width:90%; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s;}
-.about-right img:hover{ transform: translateY(-5px) scale(1.02); box-shadow:0 30px 60px rgba(0,0,0,0.4); }
+.about-right { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  min-height: 300px;
+}
+
+.about-right img { 
+  max-width: 90%; 
+  width: 100%;
+  height: auto;
+  border-radius: 16px; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: block;
+  opacity: 1;
+}
+
+.about-right img:hover { 
+  transform: translateY(-5px) scale(1.02); 
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4); 
+}
 
 /* ============================
    CONTATO
@@ -715,11 +751,16 @@ img[loading="lazy"] {
   
   .hero-right {
     margin-top: var(--space-lg);
+    display: flex !important;
+    min-height: 250px;
   }
   
   .hero-right img {
     max-width: 80%;
+    width: auto;
     margin: 0 auto;
+    display: block !important;
+    opacity: 1 !important;
   }
   
   .about-section {
@@ -738,11 +779,16 @@ img[loading="lazy"] {
   
   .about-right {
     margin-top: var(--space-lg);
+    display: flex !important;
+    min-height: 250px;
   }
   
   .about-right img {
     max-width: 80%;
+    width: auto;
     margin: var(--space-lg) auto 0 auto;
+    display: block !important;
+    opacity: 1 !important;
   }
   
   .about-cards {
@@ -803,8 +849,16 @@ img[loading="lazy"] {
     margin-bottom: var(--space-lg);
   }
   
+  .hero-right {
+    display: flex !important;
+    min-height: 200px;
+  }
+  
   .hero-right img {
     max-width: 90%;
+    width: auto;
+    display: block !important;
+    opacity: 1 !important;
   }
   
   .section-title {
