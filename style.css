@@ -1418,12 +1418,12 @@ footer a:focus {
 }
 
 .service-icon svg {
-  filter: drop-shadow(0 4px 12px rgba(164, 59, 203, 0.3));
+  filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.3));
   transition: filter 0.4s ease;
 }
 
 .service-card:hover .service-icon svg {
-  filter: drop-shadow(0 8px 20px rgba(164, 59, 203, 0.5));
+  filter: drop-shadow(0 8px 20px rgba(0, 217, 255, 0.5));
 }
 
 .service-card h3 {
