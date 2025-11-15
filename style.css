@@ -304,6 +304,8 @@ nav.nav-desktop a.active::after {
   font-weight: 700; 
   margin-bottom: var(--space-xs); 
   line-height: 1.2;
+  width: 100%;
+  max-width: 100%;
 }
 
 .section-subtitle { 
@@ -311,6 +313,8 @@ nav.nav-desktop a.active::after {
   color: rgba(255,255,255,0.8); 
   margin-bottom: var(--space-2xl); 
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
 }
 .portfolio-grid { 
   display: grid; 
