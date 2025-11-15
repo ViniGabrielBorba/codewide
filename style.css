@@ -1554,6 +1554,43 @@ img[loading="lazy"] {
   .service-card p {
     font-size: var(--font-size-sm);
   }
+
+  .feature-card,
+  .process-step {
+    padding: var(--space-md);
+  }
+
+  .feature-card h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  .feature-card p,
+  .process-step p {
+    font-size: var(--font-size-sm);
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-xl);
+  }
+
+  .cta-section {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .cta-section h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .cta-section p {
+    font-size: var(--font-size-sm);
+  }
 }
 
 /* Desktop Large (1440px+) */
