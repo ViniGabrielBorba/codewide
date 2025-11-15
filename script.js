@@ -192,12 +192,21 @@
 // INDICADOR DE PÁGINA ATIVA
 // ============================
 (function() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  // Pegar a página atual, decodificando caracteres especiais
+  let currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  currentPage = decodeURIComponent(currentPage).toLowerCase();
+  
   const navLinks = document.querySelectorAll('.nav-desktop a, .nav-mobile .nav-link');
   
   navLinks.forEach(link => {
-    const linkPath = link.getAttribute('href');
-    if (linkPath === currentPage || (currentPage === '' && linkPath === 'index.html')) {
+    let linkPath = link.getAttribute('href');
+    // Decodificar e normalizar o caminho do link
+    linkPath = decodeURIComponent(linkPath).toLowerCase();
+    
+    // Comparar páginas (incluindo index.html como raiz)
+    if (linkPath === currentPage || 
+        (currentPage === '' && linkPath === 'index.html') ||
+        (currentPage === 'index.html' && linkPath === 'index.html')) {
       link.classList.add('active');
     }
   });
