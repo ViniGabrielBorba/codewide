@@ -151,17 +151,21 @@ nav.nav-desktop a.active::after {
    HERO
 ============================ */
 .hero {
+  margin-top: var(--space-2xl);
+}
+
+.hero-main {
   display: grid;
   grid-template-columns: 1fr minmax(300px, 1fr);
   gap: var(--space-2xl);
   align-items: center;
-  margin-top: var(--space-2xl);
 }
 
 /* Garantir layout lado a lado em desktop */
 @media (min-width: 960px) {
-  .hero {
+  .hero-main {
     grid-template-columns: 1fr minmax(300px, 1fr) !important;
+    display: grid !important;
   }
 }
 
@@ -793,8 +797,8 @@ img[loading="lazy"] {
     display: block;
   }
   
-  .hero {
-    grid-template-columns: 1fr;
+  .hero-main {
+    grid-template-columns: 1fr !important;
     text-align: center;
     gap: var(--space-xl);
   }
@@ -1007,6 +1011,10 @@ img[loading="lazy"] {
   
   .brand .title {
     font-size: var(--font-size-base);
+  }
+  
+  .hero-main {
+    grid-template-columns: 1fr !important;
   }
   
   .hero-left h1 {
