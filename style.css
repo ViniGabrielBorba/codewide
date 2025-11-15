@@ -615,6 +615,15 @@ nav.nav-desktop a.active::after {
   gap: var(--space-3xl); 
   align-items: start; 
   margin-top: var(--space-3xl);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (min-width: 1200px) {
+  .contact-section {
+    gap: var(--space-3xl);
+  }
 }
 
 .contact-left h1 {
@@ -695,6 +704,7 @@ nav.nav-desktop a.active::after {
   flex-direction: column;
   gap: var(--space-2xl);
   width: 100%;
+  max-width: 100%;
 }
 
 .contact-form {
@@ -703,6 +713,7 @@ nav.nav-desktop a.active::after {
   gap: var(--space-md);
   width: 100%;
   max-width: 100%;
+  min-width: 0;
 }
 
 .contact-form input,
@@ -732,7 +743,8 @@ nav.nav-desktop a.active::after {
 /* Mapa de Localização */
 .map-container {
   width: 100%;
-  margin-top: var(--space-xl);
+  margin-top: 0;
+  min-width: 0;
 }
 
 .map-container h3 {
@@ -750,6 +762,8 @@ nav.nav-desktop a.active::after {
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
   background: rgba(255,255,255,0.05);
+  display: block;
+  min-width: 0;
 }
 
 .map-address {
@@ -1561,6 +1575,15 @@ img[loading="lazy"] {
     grid-template-columns: 1fr;
     text-align: left;
     gap: var(--space-2xl);
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
   
   .contact-right {
@@ -1569,14 +1592,19 @@ img[loading="lazy"] {
   
   .contact-form {
     max-width: 100%;
+    width: 100%;
   }
 
   .map-container {
     margin-top: var(--space-xl);
+    width: 100%;
+    max-width: 100%;
   }
 
   .map-container iframe {
     height: 250px;
+    width: 100%;
+    max-width: 100%;
   }
   
   .section-title {
