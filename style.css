@@ -2,11 +2,14 @@
    VARIÁVEIS GLOBAIS
 ============================ */
 :root {
-  --primary: #A43BCB;
-  --primary-dark: #9429B8;
-  --accent-grad: linear-gradient(90deg, #FF6B8A 0%, #FFB86B 50%, #A43BCB 100%);
+  --primary: #000000;
+  --primary-dark: #0A0A0A;
+  --accent-grad: linear-gradient(90deg, #FFD700 0%, #00D9FF 50%, #FFFFFF 100%);
+  --accent-gold: #FFD700;
+  --accent-cyan: #00D9FF;
+  --accent-white: #FFFFFF;
   --text: #ffffff;
-  --muted: #E0C8FF;
+  --muted: #B0B0B0;
   --radius: 22px;
   --max-width: 1400px;
   --transition: 0.3s ease;
@@ -51,7 +54,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text);
-  background: radial-gradient(circle at top left, var(--primary), #4B1F6B 80%);
+  background: radial-gradient(circle at top left, #0A0A0A, #000000 80%);
 }
 
 /* ============================
@@ -261,9 +264,9 @@ nav.nav-desktop a.active::after {
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
-  border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 4px 20px rgba(164, 59, 203, 0.4),
-              0 0 30px rgba(164, 59, 203, 0.2);
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3),
+              0 0 30px rgba(255, 215, 0, 0.15);
   transition: all 0.3s ease;
   text-align: center;
   cursor: pointer;
@@ -273,9 +276,10 @@ nav.nav-desktop a.active::after {
 .cta:focus { 
   background: var(--primary-dark);
   transform: scale(1.05) translateY(-2px); 
-  box-shadow: 0 6px 30px rgba(164,59,203,0.6),
-              0 0 40px rgba(164,59,203,0.3);
-  border-color: rgba(255,255,255,0.2);
+  box-shadow: 0 6px 30px rgba(255, 215, 0, 0.5),
+              0 0 40px rgba(255, 215, 0, 0.3),
+              inset 0 0 20px rgba(255, 215, 0, 0.1);
+  border-color: var(--accent-gold);
   outline: none; 
 }
 
@@ -320,8 +324,9 @@ nav.nav-desktop a.active::after {
 .service:focus { 
   transform: translateY(-6px); 
   background: rgba(255,255,255,0.08); 
-  border-color: rgba(255,255,255,0.15);
-  box-shadow: 0 8px 24px rgba(164,59,203,0.2);
+  border-color: rgba(255,215,0,0.3);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.2),
+              0 0 20px rgba(0,217,255,0.15);
   outline: none; 
 }
 
@@ -348,7 +353,7 @@ nav.nav-desktop a.active::after {
   gap: var(--space-md);
   padding: var(--space-xl);
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(164,59,203,0.12) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.3) 100%);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
 }
@@ -386,7 +391,7 @@ nav.nav-desktop a.active::after {
 .benefits-list {
   padding: var(--space-xl);
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(164,59,203,0.12) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.3) 100%);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
 }
@@ -428,7 +433,7 @@ nav.nav-desktop a.active::after {
 .benefits-list li svg {
   width: 20px;
   height: 20px;
-  color: #FFB86B;
+  color: var(--accent-gold);
   flex-shrink: 0;
 }
 
@@ -540,7 +545,7 @@ nav.nav-desktop a.active::after {
 }
 
 .about-card { 
-  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(164,59,203,0.15) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.4) 100%);
   padding: var(--space-2xl);
   border-radius: 20px;
   text-align: center; 
@@ -567,10 +572,10 @@ nav.nav-desktop a.active::after {
 
 .about-card:hover {
   transform: translateY(-8px) scale(1.02);
-  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(164,59,203,0.25) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.5) 100%);
   border-color: rgba(255,255,255,0.2);
-  box-shadow: 0 16px 48px rgba(164,59,203,0.3),
-              0 0 40px rgba(164,59,203,0.15),
+  box-shadow: 0 16px 48px rgba(255,215,0,0.2),
+              0 0 40px rgba(0,217,255,0.15),
               inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
@@ -682,7 +687,7 @@ nav.nav-desktop a.active::after {
 .contact-item svg {
   width: 24px;
   height: 24px;
-  color: #FFB86B;
+  color: var(--accent-gold);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -711,7 +716,7 @@ nav.nav-desktop a.active::after {
 
 .contact-item a:hover,
 .contact-item a:focus {
-  color: #FFB86B;
+  color: var(--accent-gold);
   text-decoration: underline;
 }
 
@@ -804,7 +809,7 @@ nav.nav-desktop a.active::after {
   width: 85%;
   max-width: 360px;
   height: 100vh;
-  background: linear-gradient(135deg, rgba(164,59,203,0.98) 0%, rgba(124,33,179,0.98) 50%, rgba(100,20,150,0.98) 100%);
+  background: linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(10,10,10,0.98) 50%, rgba(20,20,20,0.98) 100%);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: 0;
@@ -812,10 +817,10 @@ nav.nav-desktop a.active::after {
   gap: 0;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
-  box-shadow: -8px 0 40px rgba(0,0,0,0.6),
-              inset -1px 0 0 rgba(255,255,255,0.1),
-              inset 0 0 60px rgba(164,59,203,0.3);
-  border-left: 1px solid rgba(255,255,255,0.1);
+  box-shadow: -8px 0 40px rgba(0,0,0,0.8),
+              inset -1px 0 0 rgba(255,215,0,0.2),
+              inset 0 0 60px rgba(255,215,0,0.1);
+  border-left: 1px solid rgba(255,215,0,0.3);
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -917,10 +922,10 @@ nav.nav-desktop a.active::after {
 .nav-mobile .nav-link:hover,
 .nav-mobile .nav-link:focus {
   color: #fff;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(164,59,203,0.2) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.4) 100%);
   border-color: rgba(255,255,255,0.2);
   transform: translateX(8px);
-  box-shadow: 0 4px 16px rgba(164,59,203,0.3),
+  box-shadow: 0 4px 16px rgba(255,215,0,0.3),
               inset 0 1px 0 rgba(255,255,255,0.2);
   outline: none;
 }
@@ -933,11 +938,11 @@ nav.nav-desktop a.active::after {
 
 .nav-mobile .nav-link.active {
   color: #fff;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(164,59,203,0.25) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0.5) 100%);
   border-color: rgba(255,255,255,0.3);
-  box-shadow: 0 4px 20px rgba(164,59,203,0.4),
+  box-shadow: 0 4px 20px rgba(255,215,0,0.3),
               inset 0 1px 0 rgba(255,255,255,0.25),
-              0 0 20px rgba(164,59,203,0.2);
+              0 0 20px rgba(0,217,255,0.2);
 }
 
 .nav-mobile .nav-link.active::before {
@@ -1011,7 +1016,7 @@ nav.nav-desktop a.active::after {
   text-align: center;
   padding: var(--space-2xl);
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(164,59,203,0.12) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.3) 100%);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1034,10 +1039,10 @@ nav.nav-desktop a.active::after {
 .feature-card:hover,
 .feature-card:focus {
   transform: translateY(-8px) scale(1.02);
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(164,59,203,0.2) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.4) 100%);
   border-color: rgba(255,255,255,0.2);
-  box-shadow: 0 16px 48px rgba(164,59,203,0.3),
-              0 0 40px rgba(164,59,203,0.15),
+  box-shadow: 0 16px 48px rgba(255,215,0,0.2),
+              0 0 40px rgba(0,217,255,0.15),
               inset 0 1px 0 rgba(255,255,255,0.2);
   outline: none;
 }
@@ -1125,7 +1130,7 @@ nav.nav-desktop a.active::after {
   text-align: center;
   padding: var(--space-2xl);
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(164,59,203,0.1) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.3) 100%);
   border: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(10px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1150,7 +1155,7 @@ nav.nav-desktop a.active::after {
 .process-step:focus {
   transform: translateY(-6px);
   border-color: rgba(255,255,255,0.2);
-  box-shadow: 0 12px 36px rgba(164,59,203,0.25),
+  box-shadow: 0 12px 36px rgba(255,215,0,0.2),
               inset 0 1px 0 rgba(255,255,255,0.15);
   outline: none;
 }
@@ -1173,13 +1178,13 @@ nav.nav-desktop a.active::after {
   color: #fff;
   position: relative;
   z-index: 1;
-  box-shadow: 0 4px 16px rgba(164,59,203,0.4);
+  box-shadow: 0 4px 16px rgba(255,215,0,0.4);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .process-step:hover .step-number {
   transform: scale(1.15) rotate(10deg);
-  box-shadow: 0 8px 24px rgba(164,59,203,0.6);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.5);
 }
 
 .process-step h3 {
@@ -1209,7 +1214,7 @@ nav.nav-desktop a.active::after {
   margin-bottom: var(--space-3xl);
   padding: var(--space-3xl) var(--space-2xl);
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(164,59,203,0.15) 0%, rgba(255,107,138,0.1) 100%);
+  background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(255,215,0,0.1) 100%);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(15px);
   text-align: center;
@@ -1226,7 +1231,7 @@ nav.nav-desktop a.active::after {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(164,59,203,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
   animation: pulse 4s ease-in-out infinite;
 }
 
@@ -1287,7 +1292,7 @@ footer p:last-child {
 }
 
 footer a {
-  color: #FFB86B;
+  color: var(--accent-gold);
   text-decoration: none;
   margin: 0 12px;
   transition: color var(--transition);
@@ -1322,7 +1327,7 @@ footer a:focus {
 }
 
 #cookieConsent a {
-  color: #FFB86B;
+  color: var(--accent-gold);
   text-decoration: underline;
 }
 
@@ -1331,7 +1336,7 @@ footer a:focus {
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
-  background: #FFB86B;
+  background: var(--accent-gold);
   color: #222;
   font-weight: 600;
   cursor: pointer;
@@ -1359,7 +1364,7 @@ footer a:focus {
   text-align: center;
   padding: var(--space-2xl);
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(164,59,203,0.15) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.4) 100%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
@@ -1384,10 +1389,10 @@ footer a:focus {
 .service-card:hover,
 .service-card:focus {
   transform: translateY(-8px) scale(1.02);
-  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(164,59,203,0.25) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.5) 100%);
   border-color: rgba(255,255,255,0.2);
-  box-shadow: 0 16px 48px rgba(164,59,203,0.3),
-              0 0 40px rgba(164,59,203,0.15),
+  box-shadow: 0 16px 48px rgba(255,215,0,0.2),
+              0 0 40px rgba(0,217,255,0.15),
               inset 0 1px 0 rgba(255,255,255,0.2);
   outline: none;
 }
@@ -1490,7 +1495,7 @@ footer a:focus {
    LINKS (RODAPÉ, TELEFONE, EMAIL)
 ============================ */
 a[href^="tel"], a[href^="mailto"]{color:var(--text);text-decoration:none;transition:color var(--transition);}
-a[href^="tel"]:hover,a[href^="tel"]:focus,a[href^="mailto"]:hover,a[href^="mailto"]:focus{color:#FFB86B;}
+a[href^="tel"]:hover,a[href^="tel"]:focus,a[href^="mailto"]:hover,a[href^="mailto"]:focus{color:var(--accent-gold);}
 
 /* ============================
    IMAGENS (LAZY LOADING)
