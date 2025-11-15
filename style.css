@@ -640,12 +640,8 @@ a[href^="tel"]:hover,a[href^="tel"]:focus,a[href^="mailto"]:hover,a[href^="mailt
    IMAGENS (LAZY LOADING)
 ============================ */
 img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-img[loading="lazy"].loaded {
   opacity: 1;
+  transition: opacity 0.3s;
 }
 
 /* ============================
