@@ -22,3 +22,4 @@ Allow: /widecodebr*.png
 # Crawl-delay: 1
 
 
+
