@@ -2233,6 +2233,20 @@ img[loading="lazy"] {
 
 /* Mobile Portrait (420px - 767px) */
 @media (max-width: 767px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
   .wrap {
     margin: var(--space-lg) var(--space-md);
     padding: var(--space-lg);
@@ -2445,6 +2459,36 @@ img[loading="lazy"] {
 
   .cta-section p {
     font-size: var(--font-size-base);
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .footer-brand {
+    text-align: center;
+  }
+  
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+    text-align: center;
+  }
+  
+  .footer-whatsapp {
+    margin: var(--space-sm) auto 0;
+  }
+  
+  .social-link {
+    margin: 0 auto;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
   }
 }
 
