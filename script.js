@@ -145,6 +145,7 @@
     
     const nome = form.nome.value.trim();
     const email = form.email.value.trim();
+    const servico = form.servico.value;
     const mensagem = form.mensagem.value.trim();
 
     let isValid = true;
@@ -165,6 +166,14 @@
       showValid(form.email);
     }
 
+    // Validação de serviço
+    if (!servico) {
+      showError(form.servico, 'Por favor, selecione um serviço');
+      isValid = false;
+    } else if (servico) {
+      showValid(form.servico);
+    }
+
     // Validação de mensagem
     if (mensagem.length < 10) {
       showError(form.mensagem, 'Mensagem deve ter pelo menos 10 caracteres');
@@ -175,7 +184,7 @@
 
     if (isValid) {
       const phone = "5581994201799";
-      const text = `Olá, meu nome é ${nome}.\nEmail: ${email}\nMensagem: ${mensagem}`;
+      const text = `Olá, meu nome é ${nome}.\nEmail: ${email}\nServiço de interesse: ${servico}\nMensagem: ${mensagem}`;
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       window.open(url, "_blank");
       form.reset();
@@ -212,12 +221,12 @@
   });
 
   // Validação em tempo real
-  ['nome', 'email', 'mensagem'].forEach(field => {
+  ['nome', 'email', 'servico', 'mensagem'].forEach(field => {
     const input = form[field];
     if (!input) return;
 
     input.addEventListener('blur', function() {
-      const value = this.value.trim();
+      const value = field === 'servico' ? this.value : this.value.trim();
       
       if (field === 'nome') {
         if (value.length < 2) {
@@ -233,6 +242,12 @@
         } else {
           clearError(this);
         }
+      } else if (field === 'servico') {
+        if (!value) {
+          showError(this, 'Por favor, selecione um serviço');
+        } else if (value) {
+          showValid(this);
+        }
       } else if (field === 'mensagem') {
         if (value.length < 10) {
           showError(this, 'Mensagem deve ter pelo menos 10 caracteres');
@@ -244,16 +259,30 @@
 
     input.addEventListener('input', function() {
       if (this.classList.contains('error')) {
-        const value = this.value.trim();
+        const value = field === 'servico' ? this.value : this.value.trim();
         if (field === 'nome' && value.length >= 2) {
           showValid(this);
         } else if (field === 'email' && value && validateEmail(value)) {
+          showValid(this);
+        } else if (field === 'servico' && value) {
           showValid(this);
         } else if (field === 'mensagem' && value.length >= 10) {
           showValid(this);
         }
       }
     });
+
+    // Para select, usar evento 'change' também
+    if (field === 'servico' && input.tagName === 'SELECT') {
+      input.addEventListener('change', function() {
+        const value = this.value;
+        if (value) {
+          showValid(this);
+        } else {
+          showError(this, 'Por favor, selecione um serviço');
+        }
+      });
+    }
   });
 })();
 
