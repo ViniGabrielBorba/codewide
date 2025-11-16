@@ -1027,20 +1027,34 @@ nav.nav-desktop a.active::after {
 }
 
 .contact-form select {
-  background: rgba(255,255,255,0.08);
-  color: var(--text);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
   cursor: pointer;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23FFD700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--space-md) center;
   padding-right: calc(var(--space-md) * 2 + 12px);
+  transition: background var(--transition);
+}
+
+.contact-form select:hover {
+  background-color: rgba(255,255,255,0.08);
 }
 
 .contact-form select option {
   background: #1a1a1a;
-  color: var(--text);
+  color: #fff;
   padding: var(--space-md);
+}
+
+.contact-form select option:checked {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+.contact-form select:invalid {
+  color: rgba(255,255,255,0.5);
 }
 
 /* Mapa de Localização */

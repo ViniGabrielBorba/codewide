@@ -184,7 +184,7 @@
 
     if (isValid) {
       const phone = "5581994201799";
-      const text = `Olá, meu nome é ${nome}.\nEmail: ${email}\nServiço de interesse: ${servico}\nMensagem: ${mensagem}`;
+      const text = `Olá, meu nome é ${nome}.\nEmail: ${email}\nServiço escolhido: ${servico}\nMensagem: ${mensagem}`;
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
       window.open(url, "_blank");
       form.reset();
