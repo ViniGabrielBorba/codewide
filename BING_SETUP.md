@@ -8,14 +8,14 @@
 - Clique em "Adicionar site"
 
 ### 2. Adicionar seu Site
-- URL do site: `https://vinigabrielborba.github.io/codewide/`
+- URL do site: `https://www.widecodebr.com.br/`
 - Escolha o método de verificação:
   - **Meta Tag (Recomendado):** Copie a chave fornecida
   - Cole no arquivo `index.html` substituindo `SUA_CHAVE_BING_AQUI`
 
 ### 3. Enviar Sitemap
 - Vá em **Sitemaps** no painel do Bing
-- Adicione: `https://vinigabrielborba.github.io/codewide/sitemap.xml`
+- Adicione: `https://www.widecodebr.com.br/sitemap.xml`
 - Clique em **Enviar**
 
 ---
@@ -26,7 +26,7 @@
 - Acesse: https://search.google.com/search-console
 - Adicione sua propriedade
 - Escolha: "Prefixo do URL"
-- Digite: `https://vinigabrielborba.github.io/codewide/`
+- Digite: `https://www.widecodebr.com.br/`
 
 ### 2. Verificar Propriedade
 - Use o método **Tag HTML**
@@ -44,7 +44,7 @@
 ### Yandex (Rússia/Europa)
 - Acesse: https://webmaster.yandex.com/
 - Adicione seu site
-- Envie o sitemap: `https://vinigabrielborba.github.io/codewide/sitemap.xml`
+- Envie o sitemap: `https://www.widecodebr.com.br/sitemap.xml`
 
 ### DuckDuckGo
 - DuckDuckGo usa resultados do Bing

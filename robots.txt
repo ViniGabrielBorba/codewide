@@ -1,5 +1,5 @@
 # robots.txt para WideCodeBR
-# https://vinigabrielborba.github.io/codewide/
+# https://www.widecodebr.com.br/
 
 # Permitir todos os buscadores
 User-agent: *
@@ -25,7 +25,7 @@ User-agent: Yandex
 Allow: /
 
 # Sitemap (importante para indexação)
-Sitemap: https://vinigabrielborba.github.io/codewide/sitemap.xml
+Sitemap: https://www.widecodebr.com.br/sitemap.xml
 
 # Bloquear arquivos desnecessários para indexação
 Disallow: /CNAME
