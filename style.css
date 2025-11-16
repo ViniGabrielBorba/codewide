@@ -700,6 +700,169 @@ nav.nav-desktop a.active::after {
 }
 
 /* ============================
+   SEÇÃO FUNDADOR
+============================ */
+.founder-section {
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+  width: 100%;
+}
+
+.founder-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-2xl);
+}
+
+.founder-story {
+  margin-top: var(--space-2xl);
+}
+
+.founder-text {
+  line-height: 1.8;
+  color: rgba(255,255,255,0.9);
+}
+
+.founder-text h3 {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.founder-role {
+  font-size: var(--font-size-xl);
+  color: var(--accent-gold);
+  margin-bottom: var(--space-2xl);
+  font-weight: 500;
+}
+
+.founder-bio,
+.founder-journey,
+.founder-formation {
+  margin-bottom: var(--space-3xl);
+}
+
+.founder-bio p,
+.founder-journey p {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-lg);
+  color: rgba(255,255,255,0.9);
+  line-height: 1.8;
+}
+
+.founder-bio p:first-child,
+.founder-journey p:first-child {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+}
+
+.founder-journey h4,
+.founder-formation h4 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  color: var(--text);
+  border-left: 4px solid var(--accent-gold);
+  padding-left: var(--space-md);
+}
+
+.founder-formation {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.3) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: var(--space-2xl);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.formation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.formation-list li {
+  font-size: var(--font-size-lg);
+  color: rgba(255,255,255,0.9);
+  padding: var(--space-md) 0;
+  padding-left: var(--space-2xl);
+  position: relative;
+  line-height: 1.7;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.formation-list li:last-child {
+  border-bottom: none;
+}
+
+.formation-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.formation-list li strong {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.founder-text strong {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Responsividade Seção Fundador */
+@media (max-width: 959px) {
+  .founder-content {
+    padding: var(--space-xl);
+  }
+  
+  .founder-text h3 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .founder-bio p,
+  .founder-journey p {
+    font-size: var(--font-size-base);
+  }
+  
+  .founder-bio p:first-child,
+  .founder-journey p:first-child {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 767px) {
+  .founder-content {
+    padding: var(--space-lg);
+  }
+  
+  .founder-text h3 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .founder-role {
+    font-size: var(--font-size-base);
+  }
+  
+  .founder-journey h4,
+  .founder-formation h4 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .formation-list li {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* ============================
    CONTATO
 ============================ */
 .contact-section { 
