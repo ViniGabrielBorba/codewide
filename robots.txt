@@ -21,3 +21,4 @@ Allow: /widecodebr*.png
 # Crawl-delay (opcional - remover se não necessário)
 # Crawl-delay: 1
 
+
