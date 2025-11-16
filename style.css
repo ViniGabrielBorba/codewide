@@ -830,51 +830,33 @@ nav.nav-desktop a.active::after {
   letter-spacing: 1px;
 }
 
-/* Responsividade Seção Fundador */
-@media (max-width: 1199px) {
-  .founder-grid {
+/* Responsividade Seção Sobre */
+@media (max-width: 959px) {
+  .about-cards-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
   }
   
-  .founder-formation {
-    position: static;
+  .founder-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
   }
   
-  .founder-stats {
+  .founder-name {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .founder-role {
+    font-size: var(--font-size-lg);
+  }
+  
+  .stats-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 959px) {
-  .founder-container {
-    padding: 0 var(--space-xl);
-  }
-  
-  .founder-header h3 {
-    font-size: var(--font-size-3xl);
-  }
-  
-  .founder-bio p,
-  .founder-journey p {
-    font-size: var(--font-size-base);
-  }
-  
-  .founder-bio p:first-child {
-    font-size: var(--font-size-lg);
-  }
-  
-  .founder-stats {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 767px) {
-  .founder-container {
-    padding: 0 var(--space-lg);
-  }
-  
-  .founder-header h3 {
+  .founder-name {
     font-size: var(--font-size-2xl);
   }
   
@@ -882,14 +864,20 @@ nav.nav-desktop a.active::after {
     font-size: var(--font-size-base);
   }
   
-  .founder-journey h4,
-  .founder-formation h4 {
-    font-size: var(--font-size-xl);
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-card,
+  .founder-card,
+  .founder-stats-card {
+    padding: var(--space-xl);
   }
   
   .formation-list li {
     flex-direction: column;
     gap: var(--space-xs);
+    align-items: flex-start;
   }
   
   .formation-year {
