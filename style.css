@@ -802,6 +802,8 @@ nav.nav-desktop a.active::after {
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   position: sticky;
   top: var(--space-2xl);
+  width: 100%;
+  max-width: 100%;
 }
 
 .founder-formation h4 {
@@ -827,7 +829,7 @@ nav.nav-desktop a.active::after {
   gap: var(--space-md);
   padding: var(--space-lg) 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  align-items: flex-start;
+  align-items: center;
 }
 
 .formation-list li:last-child {
@@ -835,14 +837,16 @@ nav.nav-desktop a.active::after {
 }
 
 .formation-year {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
-  color: var(--accent-gold);
-  min-width: 60px;
+  color: var(--text);
+  min-width: 70px;
   text-align: center;
-  background: rgba(255,215,0,0.1);
-  border-radius: 8px;
-  padding: var(--space-xs) var(--space-sm);
+  background: var(--accent-gold);
+  border-radius: 10px;
+  padding: var(--space-sm) var(--space-md);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255,215,0,0.3);
 }
 
 .formation-text {
@@ -850,7 +854,6 @@ nav.nav-desktop a.active::after {
   color: rgba(255,255,255,0.9);
   line-height: 1.6;
   flex: 1;
-  padding-top: 2px;
 }
 
 .founder-stats {
@@ -863,6 +866,8 @@ nav.nav-desktop a.active::after {
   border-radius: 20px;
   padding: var(--space-2xl);
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 100%;
 }
 
 .stat-item {
