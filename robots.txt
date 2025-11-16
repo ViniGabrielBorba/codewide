@@ -1,24 +1,42 @@
 # robots.txt para WideCodeBR
 # https://vinigabrielborba.github.io/codewide/
 
+# Permitir todos os buscadores
 User-agent: *
 Allow: /
 
-# Sitemap
+# Configurações específicas para buscadores principais
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Sitemap (importante para indexação)
 Sitemap: https://vinigabrielborba.github.io/codewide/sitemap.xml
 
 # Bloquear arquivos desnecessários para indexação
 Disallow: /CNAME
-Disallow: /*.png$
-Disallow: /*.jpg$
-Disallow: /*.jpeg$
-Disallow: /*.webp$
-Disallow: /*.gif$
+Disallow: /index_temp.html
+Disallow: /*.md$
 
 # Permitir imagens importantes (caso necessário)
 Allow: /widecodebr*.png
+Allow: /index.png
 
-# Crawl-delay (opcional - remover se não necessário)
+# Crawl-delay (opcional)
 # Crawl-delay: 1
 
 
