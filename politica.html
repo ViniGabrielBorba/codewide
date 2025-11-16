@@ -28,6 +28,19 @@
   <!-- Performance Meta Tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content="#000000">
+  
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_path: window.location.pathname,
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
