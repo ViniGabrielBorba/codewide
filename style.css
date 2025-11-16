@@ -12,7 +12,10 @@
   --muted: #B0B0B0;
   --radius: 22px;
   --max-width: 1400px;
-  --transition: 0.3s ease;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   
   /* Sistema de Espaçamento */
   --space-xs: 8px;
@@ -526,12 +529,31 @@ nav.nav-desktop a.active::after {
   overflow: hidden;
   background: rgba(255,255,255,0.05);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all var(--transition);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.portfolio-card:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-card:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-card:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .portfolio-card:hover { 
-  transform: translateY(-6px); 
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  transform: translateY(-8px) scale(1.02); 
+  box-shadow: 0 20px 50px rgba(255,215,0,0.25),
+              0 0 30px rgba(0,217,255,0.15);
 }
 
 .portfolio-card img { 
@@ -1067,10 +1089,18 @@ nav.nav-desktop a.active::after {
   background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.3) 100%);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition-slow);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
 
 .feature-card::before {
   content: '';
@@ -1108,7 +1138,7 @@ nav.nav-desktop a.active::after {
   justify-content: center;
   position: relative;
   z-index: 1;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-slow);
 }
 
 .feature-card:hover .feature-icon {
@@ -1413,14 +1443,21 @@ footer a:focus {
   padding: var(--space-2xl);
   border-radius: 20px;
   background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.4) 100%);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition-slow);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.2), 
               inset 0 1px 0 rgba(255,255,255,0.1);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
 
 .service-card::before {
   content: '';
@@ -1458,7 +1495,7 @@ footer a:focus {
   justify-content: center;
   position: relative;
   z-index: 1;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-slow);
 }
 
 .service-card:hover .service-icon {
@@ -1501,8 +1538,31 @@ footer a:focus {
 ============================ */
 .contact-form input.error,
 .contact-form textarea.error {
-  border-color: #ff6b8a;
-  background: rgba(255, 107, 138, 0.1);
+  border-color: #ff6b8a !important;
+  background: rgba(255, 107, 138, 0.1) !important;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.contact-form input:focus.error,
+.contact-form textarea:focus.error {
+  box-shadow: 0 0 0 3px rgba(255, 107, 138, 0.3) !important;
+}
+
+.contact-form input.valid,
+.contact-form textarea.valid {
+  border-color: #4ade80 !important;
+  background: rgba(74, 222, 128, 0.05) !important;
+}
+
+.contact-form input:focus.valid,
+.contact-form textarea:focus.valid {
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3) !important;
 }
 
 .error-message {
@@ -1513,11 +1573,16 @@ footer a:focus {
 
 .success-message {
   color: #4ade80;
-  padding: 12px;
-  background: rgba(74, 222, 128, 0.1);
-  border-radius: 8px;
-  margin-top: 16px;
+  padding: 16px 20px;
+  background: rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 12px;
+  margin-top: 20px;
   text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(74, 222, 128, 0.2),
+              0 0 0 3px rgba(74, 222, 128, 0.1);
+  transition: all var(--transition);
 }
 
 /* ============================

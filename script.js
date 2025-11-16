@@ -102,27 +102,41 @@
   }
 
   function showError(input, message) {
-    input.style.borderColor = '#ff6b8a';
-    input.style.background = 'rgba(255, 107, 138, 0.1)';
+    input.classList.add('error');
+    input.classList.remove('valid');
     
     let errorDiv = input.parentElement.querySelector('.error-message');
     if (!errorDiv) {
       errorDiv = document.createElement('div');
       errorDiv.className = 'error-message';
-      errorDiv.style.color = '#ff6b8a';
-      errorDiv.style.fontSize = '14px';
-      errorDiv.style.marginTop = '4px';
       input.parentElement.appendChild(errorDiv);
     }
     errorDiv.textContent = message;
+    errorDiv.style.opacity = '0';
+    requestAnimationFrame(() => {
+      errorDiv.style.transition = 'opacity 0.3s ease';
+      errorDiv.style.opacity = '1';
+    });
+  }
+
+  function showValid(input) {
+    input.classList.remove('error');
+    input.classList.add('valid');
+    const errorDiv = input.parentElement.querySelector('.error-message');
+    if (errorDiv) {
+      errorDiv.style.transition = 'opacity 0.3s ease';
+      errorDiv.style.opacity = '0';
+      setTimeout(() => errorDiv.remove(), 300);
+    }
   }
 
   function clearError(input) {
-    input.style.borderColor = '';
-    input.style.background = '';
+    input.classList.remove('error', 'valid');
     const errorDiv = input.parentElement.querySelector('.error-message');
     if (errorDiv) {
-      errorDiv.remove();
+      errorDiv.style.transition = 'opacity 0.3s ease';
+      errorDiv.style.opacity = '0';
+      setTimeout(() => errorDiv.remove(), 300);
     }
   }
 
@@ -139,24 +153,24 @@
     if (nome.length < 2) {
       showError(form.nome, 'Nome deve ter pelo menos 2 caracteres');
       isValid = false;
-    } else {
-      clearError(form.nome);
+    } else if (nome.length >= 2) {
+      showValid(form.nome);
     }
 
     // Validação de email
     if (!validateEmail(email)) {
       showError(form.email, 'Por favor, insira um email válido');
       isValid = false;
-    } else {
-      clearError(form.email);
+    } else if (validateEmail(email)) {
+      showValid(form.email);
     }
 
     // Validação de mensagem
     if (mensagem.length < 10) {
       showError(form.mensagem, 'Mensagem deve ter pelo menos 10 caracteres');
       isValid = false;
-    } else {
-      clearError(form.mensagem);
+    } else if (mensagem.length >= 10) {
+      showValid(form.mensagem);
     }
 
     if (isValid) {
@@ -166,25 +180,80 @@
       window.open(url, "_blank");
       form.reset();
       
-      // Mostrar mensagem de sucesso
+      // Limpar estados de validação
+      form.querySelectorAll('.error, .valid').forEach(el => {
+        el.classList.remove('error', 'valid');
+      });
+
+      // Mostrar mensagem de sucesso com animação
+      const existingMsg = form.parentElement.querySelector('.success-message');
+      if (existingMsg) existingMsg.remove();
+      
       const successMsg = document.createElement('div');
       successMsg.className = 'success-message';
-      successMsg.style.cssText = 'color: #4ade80; padding: 12px; background: rgba(74, 222, 128, 0.1); border-radius: 8px; margin-top: 16px; text-align: center;';
       successMsg.textContent = '✓ Mensagem enviada com sucesso!';
+      successMsg.style.opacity = '0';
+      successMsg.style.transform = 'translateY(-10px)';
       form.parentElement.appendChild(successMsg);
       
+      requestAnimationFrame(() => {
+        successMsg.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        successMsg.style.opacity = '1';
+        successMsg.style.transform = 'translateY(0)';
+      });
+      
       setTimeout(() => {
-        successMsg.remove();
-      }, 5000);
+        successMsg.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        successMsg.style.opacity = '0';
+        successMsg.style.transform = 'translateY(-10px)';
+        setTimeout(() => successMsg.remove(), 400);
+      }, 4000);
     }
   });
 
-  // Limpar erros ao digitar
+  // Validação em tempo real
   ['nome', 'email', 'mensagem'].forEach(field => {
     const input = form[field];
-    if (input) {
-      input.addEventListener('input', () => clearError(input));
-    }
+    if (!input) return;
+
+    input.addEventListener('blur', function() {
+      const value = this.value.trim();
+      
+      if (field === 'nome') {
+        if (value.length < 2) {
+          showError(this, 'Nome deve ter pelo menos 2 caracteres');
+        } else if (value.length >= 2) {
+          showValid(this);
+        }
+      } else if (field === 'email') {
+        if (value && !validateEmail(value)) {
+          showError(this, 'Por favor, insira um email válido');
+        } else if (value && validateEmail(value)) {
+          showValid(this);
+        } else {
+          clearError(this);
+        }
+      } else if (field === 'mensagem') {
+        if (value.length < 10) {
+          showError(this, 'Mensagem deve ter pelo menos 10 caracteres');
+        } else if (value.length >= 10) {
+          showValid(this);
+        }
+      }
+    });
+
+    input.addEventListener('input', function() {
+      if (this.classList.contains('error')) {
+        const value = this.value.trim();
+        if (field === 'nome' && value.length >= 2) {
+          showValid(this);
+        } else if (field === 'email' && value && validateEmail(value)) {
+          showValid(this);
+        } else if (field === 'mensagem' && value.length >= 10) {
+          showValid(this);
+        }
+      }
+    });
   });
 })();
 
