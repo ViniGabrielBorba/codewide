@@ -154,6 +154,7 @@ header {
   justify-content: space-between;
   gap: var(--space-md);
   margin-bottom: var(--space-2xl);
+  position: relative;
 }
 
 .brand {
@@ -170,12 +171,117 @@ header {
 }
 
 /* ============================
+   BOTÃO TOGGLE MENU DESKTOP
+============================ */
+.nav-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+@media (max-width: 959px) {
+  .nav-toggle-btn {
+    display: none;
+  }
+}
+
+.nav-toggle-btn:hover,
+.nav-toggle-btn:focus {
+  border-color: var(--accent-gold);
+  background: var(--bg-card);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.nav-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.nav-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition), opacity var(--transition);
+  position: absolute;
+}
+
+.nav-toggle-btn .icon-menu {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.nav-toggle-btn .icon-close {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.nav-toggle-btn[aria-expanded="true"] .icon-menu {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.nav-toggle-btn[aria-expanded="true"] .icon-close {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* ============================
    MENU DESKTOP
 ============================ */
 nav.nav-desktop {
-  display: flex;
+  display: none;
   gap: var(--space-lg);
   align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: var(--space-lg);
+  margin-top: var(--space-md);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition);
+  z-index: 1000;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  min-width: 200px;
+}
+
+nav.nav-desktop[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (min-width: 960px) {
+  nav.nav-desktop {
+    position: absolute;
+    top: calc(100% + var(--space-md));
+    right: 0;
+    left: auto;
+    width: auto;
+    min-width: 250px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
 
 nav.nav-desktop a {
@@ -2232,8 +2338,15 @@ img[loading="lazy"] {
     margin: var(--space-xl) var(--space-lg);
   }
   
+  .nav-toggle-btn {
+    display: flex;
+  }
+  
   nav.nav-desktop {
-    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
   }
   
   .theme-toggle {
