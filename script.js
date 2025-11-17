@@ -309,3 +309,85 @@
     }
   });
 })();
+
+// ============================
+// TOGGLE DE TEMA (MODO ESCURO/CLARO)
+// ============================
+(function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  
+  // Função para obter tema salvo ou preferência do sistema
+  function getInitialTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme;
+    }
+    // Verificar preferência do sistema
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light';
+    }
+    return 'dark'; // Padrão: escuro
+  }
+  
+  // Aplicar tema inicial
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    
+    // Atualizar meta theme-color para mobile
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', theme === 'light' ? '#FFFFFF' : '#000000');
+    }
+  }
+  
+  // Alternar tema
+  function toggleTheme() {
+    const currentTheme = html.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+    
+    // Animação suave no botão
+    if (themeToggle) {
+      themeToggle.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        themeToggle.style.transform = 'scale(1)';
+      }, 150);
+    }
+  }
+  
+  // Inicializar tema
+  const initialTheme = getInitialTheme();
+  applyTheme(initialTheme);
+  
+  // Event listener no botão
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggle.setAttribute('aria-label', initialTheme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro');
+  }
+  
+  // Atualizar aria-label quando o tema muda
+  const observer = new MutationObserver(() => {
+    if (themeToggle) {
+      const currentTheme = html.getAttribute('data-theme') || 'dark';
+      themeToggle.setAttribute('aria-label', currentTheme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro');
+    }
+  });
+  
+  observer.observe(html, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
+  
+  // Escutar mudanças na preferência do sistema (opcional)
+  if (window.matchMedia) {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    mediaQuery.addEventListener('change', (e) => {
+      // Só aplicar se o usuário não tiver escolhido um tema manualmente
+      if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'light' : 'dark');
+      }
+    });
+  }
+})();

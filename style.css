@@ -1,5 +1,5 @@
 /* ============================
-   VARIÁVEIS GLOBAIS
+   VARIÁVEIS GLOBAIS - TEMA ESCURO (PADRÃO)
 ============================ */
 :root {
   --primary: #000000;
@@ -16,6 +16,39 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Variáveis de tema escuro */
+  --bg-primary: #000000;
+  --bg-secondary: #0A0A0A;
+  --bg-card: rgba(255,255,255,0.02);
+  --bg-overlay: rgba(0,0,0,0.8);
+  --bg-gradient: radial-gradient(circle at top left, #0A0A0A, #000000 80%);
+  --text-primary: #ffffff;
+  --text-secondary: #B0B0B0;
+  --border-color: rgba(255,255,255,0.1);
+  --shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* ============================
+   VARIÁVEIS TEMA CLARO
+============================ */
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --bg-card: rgba(0,0,0,0.03);
+  --bg-overlay: rgba(255,255,255,0.95);
+  --bg-gradient: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+  --border-color: rgba(0,0,0,0.1);
+  --shadow: 0 20px 60px rgba(0,0,0,0.1);
+  
+  /* Ajustar cores de texto para tema claro */
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --primary: var(--bg-primary);
+  --primary-dark: var(--bg-secondary);
+}
   
   /* Sistema de Espaçamento */
   --space-xs: 8px;
@@ -56,8 +89,9 @@ html, body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text);
-  background: radial-gradient(circle at top left, #0A0A0A, #000000 80%);
+  color: var(--text-primary);
+  background: var(--bg-gradient);
+  transition: background var(--transition-slow), color var(--transition-slow);
 }
 
 /* ============================
@@ -68,10 +102,11 @@ html, body {
   margin: var(--space-2xl) auto;
   padding: var(--space-2xl);
   border-radius: var(--radius);
-  background: rgba(255,255,255,0.02);
+  background: var(--bg-card);
   backdrop-filter: blur(20px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow: var(--shadow);
   width: 100%;
+  transition: background var(--transition-slow), box-shadow var(--transition-slow);
 }
 
 /* ============================
@@ -120,14 +155,15 @@ nav.nav-desktop a {
 
 nav.nav-desktop a:hover,
 nav.nav-desktop a:focus { 
-  color: var(--text); 
-  background: rgba(255,255,255,0.05); 
+  color: var(--text-primary); 
+  background: var(--bg-card); 
   outline: none; 
 }
 
 nav.nav-desktop a.active {
-  color: var(--text);
-  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+  background: var(--bg-card);
+  opacity: 1;
 }
 
 nav.nav-desktop a.active::after {
@@ -140,6 +176,65 @@ nav.nav-desktop a.active::after {
   height: 2px;
   background: var(--accent-grad);
   border-radius: 2px;
+}
+
+/* ============================
+   BOTÃO TOGGLE DE TEMA
+============================ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  border-color: var(--accent-gold);
+  background: var(--bg-card);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.theme-toggle .icon-sun {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.theme-toggle .icon-moon {
+  position: absolute;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg);
 }
 
 /* ============================
@@ -1285,7 +1380,7 @@ nav.nav-desktop a.active::after {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: var(--bg-overlay);
   backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
@@ -2105,8 +2200,17 @@ img[loading="lazy"] {
     display: none;
   }
   
+  .theme-toggle {
+    order: -1;
+    margin-right: auto;
+  }
+  
   .menu-btn {
     display: block;
+  }
+  
+  header {
+    gap: var(--space-sm);
   }
   
   .hero-main {
