@@ -77,15 +77,15 @@
    VARIÁVEIS TEMA CLARO
 ============================ */
 [data-theme="light"] {
-  --bg-primary: #FAFBFC;
-  --bg-secondary: #F5F6F7;
+  --bg-primary: #F0F2F5;
+  --bg-secondary: #E4E6EB;
   --bg-card: #FFFFFF;
-  --bg-overlay: rgba(250,251,252,0.98);
-  --bg-gradient: linear-gradient(135deg, #FAFBFC 0%, #FFFFFF 100%);
-  --text-primary: #1C1E21;
+  --bg-overlay: rgba(240,242,245,0.98);
+  --bg-gradient: linear-gradient(135deg, #F0F2F5 0%, #FFFFFF 100%);
+  --text-primary: #050505;
   --text-secondary: #65676B;
-  --border-color: rgba(0,0,0,0.1);
-  --shadow: 0 8px 32px rgba(0,0,0,0.06);
+  --border-color: rgba(0,0,0,0.08);
+  --shadow: 0 4px 16px rgba(0,0,0,0.04);
   
   /* Ajustar cores de texto para tema claro */
   --text: var(--text-primary);
@@ -94,20 +94,20 @@
   --primary-dark: var(--bg-secondary);
   
   /* Variáveis de cores para elementos específicos no tema claro */
-  --text-light: #1C1E21;
-  --text-medium: #42464A;
+  --text-light: #050505;
+  --text-medium: #1C1E21;
   --text-soft: #65676B;
   --text-faded: #8A8D91;
-  --bg-card-hover: rgba(0,0,0,0.04);
-  --bg-card-active: rgba(0,0,0,0.06);
-  --bg-card-light: rgba(0,0,0,0.02);
-  --bg-card-medium: rgba(0,0,0,0.04);
-  --bg-card-strong: rgba(0,0,0,0.08);
-  --bg-gradient-card: linear-gradient(135deg, rgba(0,0,0,0.015) 0%, rgba(0,0,0,0.03) 100%);
-  --bg-gradient-card-hover: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.06) 100%);
-  --border-light: rgba(0,0,0,0.06);
-  --border-medium: rgba(0,0,0,0.1);
-  --border-strong: rgba(0,0,0,0.15);
+  --bg-card-hover: rgba(0,0,0,0.03);
+  --bg-card-active: rgba(0,0,0,0.05);
+  --bg-card-light: rgba(0,0,0,0.015);
+  --bg-card-medium: rgba(0,0,0,0.03);
+  --bg-card-strong: rgba(0,0,0,0.06);
+  --bg-gradient-card: linear-gradient(135deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.02) 100%);
+  --bg-gradient-card-hover: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.04) 100%);
+  --border-light: rgba(0,0,0,0.05);
+  --border-medium: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.12);
 }
 
 /* ============================
@@ -171,117 +171,12 @@ header {
 }
 
 /* ============================
-   BOTÃO TOGGLE MENU DESKTOP
-============================ */
-.nav-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  background: var(--bg-card);
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all var(--transition);
-  position: relative;
-  overflow: hidden;
-  z-index: 1001;
-}
-
-@media (max-width: 959px) {
-  .nav-toggle-btn {
-    display: none;
-  }
-}
-
-.nav-toggle-btn:hover,
-.nav-toggle-btn:focus {
-  border-color: var(--accent-gold);
-  background: var(--bg-card);
-  transform: scale(1.05);
-  outline: none;
-}
-
-.nav-toggle-btn:active {
-  transform: scale(0.95);
-}
-
-.nav-toggle-btn svg {
-  width: 20px;
-  height: 20px;
-  transition: transform var(--transition), opacity var(--transition);
-  position: absolute;
-}
-
-.nav-toggle-btn .icon-menu {
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-.nav-toggle-btn .icon-close {
-  opacity: 0;
-  transform: rotate(90deg);
-}
-
-.nav-toggle-btn[aria-expanded="true"] .icon-menu {
-  opacity: 0;
-  transform: rotate(-90deg);
-}
-
-.nav-toggle-btn[aria-expanded="true"] .icon-close {
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-/* ============================
    MENU DESKTOP
 ============================ */
 nav.nav-desktop {
-  display: none;
+  display: flex;
   gap: var(--space-lg);
   align-items: center;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
-  padding: var(--space-lg);
-  margin-top: var(--space-md);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all var(--transition);
-  z-index: 1000;
-  flex-direction: column;
-  align-items: flex-start;
-  width: auto;
-  min-width: 200px;
-}
-
-nav.nav-desktop[aria-hidden="false"] {
-  display: flex;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-@media (min-width: 960px) {
-  nav.nav-desktop {
-    position: absolute;
-    top: calc(100% + var(--space-md));
-    right: 0;
-    left: auto;
-    width: auto;
-    min-width: 250px;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
 }
 
 nav.nav-desktop a {
@@ -2338,15 +2233,8 @@ img[loading="lazy"] {
     margin: var(--space-xl) var(--space-lg);
   }
   
-  .nav-toggle-btn {
-    display: flex;
-  }
-  
   nav.nav-desktop {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
+    display: none;
   }
   
   .theme-toggle {
